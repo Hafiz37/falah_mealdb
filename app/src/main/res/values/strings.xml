@@ -1,3 +1,29 @@
 <resources>
-    <string name="app_name">Falah_mealdb</string>
+    <string name="app_name">RAWG Bootcamp IDN</string>
+    <string name="image_game">Image Game</string>
+    <string name="game_name">Game Name</string>
+    <string name="example_date">13–03–2045</string>
+    <string name="rate">rate</string>
+    <string name="example_rate">4.9</string>
+    <string name="game_store">Game Store</string>
+    <string name="user_logo">User Logo</string>
+    <string name="best_game_title">Best Game in 2022</string>
+    <string name="failed_to_fetch_data">Failed to fetch data.</string>
+    <string name="warning">warning</string>
+    <string name="example_parent_platform">PC Playstation Xbox 360</string>
+    <string name="refresh">refresh</string>
+    <string name="game_detail_image">Game Detail Image</string>
+    <string name="example_genre">Shooter Action</string>
+    <string name="about_game">About Game</string>
+    <string name="lorem_ipsum">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="developers">Developers</string>
+    <string name="example_developers">Electronics Arts, Betethesda</string>
+    <string name="publishers">Publishers</string>
+    <string name="example_publisher">Rockstar Games, From Software</string>
+    <string name="screenshots_game">Screenshots Game</string>
+    <string name="screenshots">Screenshots</string>
+    <string name="add_to_favorite">Add To Favorite</string>
+    <string name="favorites_empty">Favorites Empty</string>
+    <string name="favorite">Favorite</string>
+    <string name="remove_from_favorite">Remove from favorite</string>
 </resources>
