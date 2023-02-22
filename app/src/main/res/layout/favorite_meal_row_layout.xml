@@ -4,8 +4,15 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="gameDetail"
+            type="com.example.rawgbootcampidn.model.GameDetail" />
+    </data>
+
     <androidx.cardview.widget.CardView
-        android:id="@+id/latest_game_item_wrapper"
+        android:id="@+id/latest_meal_item_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
@@ -22,10 +29,10 @@
 
             <ImageView
                 android:id="@+id/item_img"
-                loadImageFromUrl="@{data.backgroundImage}"
+                loadImageFromUrl="@{gameDetail.backgroundImage}"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:contentDescription="@string/image_game"
+                android:contentDescription="@string/image_meal"
                 android:scaleType="fitXY"
                 android:src="@mipmap/ic_launcher" />
 
@@ -43,11 +50,11 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="4dp"
                     android:maxLines="2"
-                    android:text="@{data.name}"
+                    android:text="@{gameDetail.name}"
                     android:textColor="@color/white"
                     android:textSize="17sp"
                     android:textStyle="bold"
-                    tools:text="@string/game_name" />
+                    tools:text="@string/meal_name" />
 
                 <TextView
                     android:id="@+id/item_release"
@@ -58,14 +65,14 @@
                     android:ellipsize="end"
                     android:justificationMode="inter_word"
                     android:maxLines="1"
-                    android:text="@{data.released}"
+                    android:text="@{gameDetail.released}"
                     android:textColor="@color/light_gray"
                     android:textSize="12sp"
                     tools:text="@string/example_date" />
 
                 <TextView
                     android:id="@+id/parent_platform"
-                    setParentPlatform="@{data.parentPlatforms}"
+                    setParentPlatform="@{gameDetail.parentPlatforms}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/item_release"
@@ -97,7 +104,7 @@
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="4dp"
                     android:layout_toEndOf="@id/item_star_img"
-                    android:text="@{data.rating.toString()}"
+                    android:text="@{gameDetail.rating.toString()}"
                     android:textColor="@color/yellow_star"
                     android:textSize="12sp"
                     tools:text="@string/example_rate" />

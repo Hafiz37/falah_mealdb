@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginStart="8dp"
-            android:text="@string/game_store"
+            android:text="@string/meal_store"
             android:textColor="@color/white"
             android:textSize="26sp"
             android:textStyle="bold"
@@ -36,7 +36,7 @@
             android:layout_marginEnd="8dp"
             android:layout_toStartOf="@id/favorite_icon"
             android:contentDescription="@string/user_logo"
-            android:src="@drawable/gamer" />
+            android:src="@drawable/meal" />
 
         <ImageView
             android:id="@+id/favorite_icon"
@@ -53,12 +53,12 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/best_game_tv"
+        android:id="@+id/best_meal_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:text="@string/best_game_title"
+        android:text="@string/best_meal_title"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -67,7 +67,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_best_game"
+        android:id="@+id/rv_best_meal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -76,8 +76,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/best_game_tv"
-        tools:listitem="@layout/game_row_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/best_meal_tv"
+        tools:listitem="@layout/meal_row_layout" />
 
     <ProgressBar
         android:id="@+id/progressbar"
