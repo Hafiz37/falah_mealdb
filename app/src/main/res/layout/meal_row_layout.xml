@@ -38,8 +38,8 @@
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                android:layout_height="65dp"
+                android:layout_marginStart="2dp"
                 android:layout_toEndOf="@id/item_img">
 
                 <TextView
@@ -57,57 +57,21 @@
                     tools:text="@string/meal_name" />
 
                 <TextView
-                    android:id="@+id/item_release"
+                    android:id="@+id/item_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/item_name"
                     android:layout_marginStart="16dp"
+                    android:layout_marginTop="7dp"
                     android:ellipsize="end"
                     android:justificationMode="inter_word"
                     android:maxLines="1"
-                    android:text="@{data.released}"
+                    android:text="@{data.idMeal}"
                     android:textColor="@color/light_gray"
                     android:textSize="12sp"
-                    tools:text="@string/example_date" />
+                    tools:text="@string/example_id" />
 
-                <TextView
-                    android:id="@+id/parent_platform"
-                    setParentPlatform="id = @{data.idMeal}"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/item_release"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
-                    android:ellipsize="end"
-                    android:justificationMode="inter_word"
-                    android:maxLines="1"
-                    android:textColor="@color/light_gray"
-                    android:textSize="12sp"
-                    tools:text="@string/example_parent_platform" />
 
-                <ImageView
-                    android:id="@+id/item_star_img"
-                    android:layout_width="16dp"
-                    android:layout_height="16dp"
-                    android:layout_below="@id/parent_platform"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
-                    android:contentDescription="@string/rate"
-                    android:src="@drawable/ic_star_rate"
-                    app:tint="@color/yellow_star" />
-
-                <TextView
-                    android:id="@+id/item_rating"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/parent_platform"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_toEndOf="@id/item_star_img"
-                    android:text="@{data.rating.toString()}"
-                    android:textColor="@color/yellow_star"
-                    android:textSize="12sp"
-                    tools:text="@string/example_rate" />
             </RelativeLayout>
 
         </RelativeLayout>

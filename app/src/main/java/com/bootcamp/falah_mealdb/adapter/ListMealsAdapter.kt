@@ -3,9 +3,8 @@ package com.bootcamp.falah_mealdb.adapter
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
-import com.bootcamp.falah_mealdb.DetailActivity
+import com.bootcamp.falah_mealdb.ui.DetailActivity
 import com.bootcamp.falah_mealdb.model.MealsItem
 import com.example.rawgbootcampidn.databinding.MealRowLayoutBinding
 

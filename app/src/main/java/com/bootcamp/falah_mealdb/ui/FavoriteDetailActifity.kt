@@ -1,4 +1,4 @@
-package com.bootcamp.falah_mealdb
+package com.bootcamp.falah_mealdb.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

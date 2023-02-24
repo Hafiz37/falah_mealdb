@@ -3,12 +3,13 @@ package com.bootcamp.falah_mealdb.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bootcamp.falah_mealdb.model.ResponseMeal
 import com.example.rawgbootcampidn.databinding.ScreenshotLayoutBinding
 
-class ScreenshotMealAdapter(private val listScreenshotMeal : ArrayList<Meal>) : RecyclerView.Adapter<ScreenshotMealAdapter.ScreenshotViewHolder>() {
+class ScreenshotMealAdapter(private val listScreenshotMeal : ArrayList<ResponseMeal>) : RecyclerView.Adapter<ScreenshotMealAdapter.ScreenshotViewHolder>() {
 
     inner class ScreenshotViewHolder(val binding : ScreenshotLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(meal: Meal) {
+        fun bind(meal: ResponseMeal) {
             TODO("Not yet implemented")
         }
 

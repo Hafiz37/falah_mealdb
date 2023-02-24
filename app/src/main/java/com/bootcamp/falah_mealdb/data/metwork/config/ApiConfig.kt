@@ -7,7 +7,7 @@ import retrofit2.create
 
 object ApiConfig {
 
-    private const val baseUrl = "https://www.themealdb.com/api/json/v1/1/"
+    const val baseUrl = "https://www.themealdb.com/api/json/v1/1/"
 
     private fun getRetrofit() : Retrofit{
         return Retrofit.Builder()

@@ -6,15 +6,15 @@
     <data>
 
         <variable
-            name="gameDetail"
-            type="com.example.rawgbootcampidn.model.GameDetail" />
+            name="mealDetail"
+            type="com.bootcamp.falah_mealdb.model.MealsItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black_background"
-        tools:context="com.bootcamp.falah_mealdb.FavoriteDetailActifity">
+        tools:context="com.bootcamp.falah_mealdb.ui.FavoriteDetailActifity">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -38,14 +38,11 @@
                 app:layout_constraintVertical_bias="0.5">
 
                 <ImageView
-                    loadImageFromUrl="@{gameDetail.backgroundImage}"
                     android:id="@+id/img_detail_meal"
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
-                    android:contentDescription="@string/meal_detail_image"
                     android:scaleType="fitXY"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:src="@drawable/img_placeholder" />
@@ -56,49 +53,23 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:text="@{gameDetail.name}"
+                    android:text="@{mealDetail.strMeal}"
                     android:textColor="@color/white"
                     android:textSize="24sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@+id/item_star_img"
+                    android:layout_marginEnd="8dp"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/img_detail_meal"
                     tools:text="@string/meal_name" />
 
-                <ImageView
-                    android:id="@+id/item_star_img"
-                    android:layout_width="28dp"
-                    android:layout_height="28dp"
-                    android:contentDescription="@string/rate"
-                    android:src="@drawable/ic_star_rate"
-                    app:layout_constraintBottom_toBottomOf="@+id/meal_name"
-                    app:layout_constraintEnd_toStartOf="@+id/meal_rating_detail"
-                    app:layout_constraintTop_toTopOf="@+id/meal_name"
-                    app:tint="@color/yellow_star" />
 
                 <TextView
-                    android:id="@+id/meal_rating_detail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="16dp"
-                    android:layout_toEndOf="@id/item_star_img"
-                    android:text="@{gameDetail.rating.toString()}"
-                    android:textColor="@color/yellow_star"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/item_star_img"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/item_star_img"
-                    tools:text="@string/example_rate" />
-
-                <TextView
-                    android:id="@+id/release_date_meal"
+                    android:id="@+id/id_meal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:text="@{gameDetail.released}"
+                    android:text="@{mealDetail.idMeal}"
                     android:textColor="@color/light_gray"
                     android:textSize="16sp"
                     android:textStyle="italic"
@@ -106,11 +77,10 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/meal_name"
-                    tools:text="@string/example_date" />
+                    tools:text="@string/example_id" />
 
                 <TextView
-                    setGenre="@{gameDetail.genres}"
-                    android:id="@+id/meal_genre"
+                    android:id="@+id/str_area"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -120,147 +90,56 @@
                     android:textSize="16sp"
                     android:textStyle="italic|bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/release_date_meal"
-                    tools:text="@string/example_genre" />
+                    app:layout_constraintTop_toBottomOf="@+id/id_meal"
+                    tools:text="@string/example_area" />
 
                 <TextView
-                    android:id="@+id/about_meal"
+                    android:id="@+id/instructions_meal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:text="@string/about_meal"
+                    android:text="@string/instructions_meal"
                     android:textColor="@color/white"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/meal_genre" />
+                    app:layout_constraintTop_toBottomOf="@+id/str_area" />
 
                 <TextView
-                    android:id="@+id/about_meal_description"
+                    android:id="@+id/instructions_meal_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
+                    android:layout_marginTop="8dp"
                     android:justificationMode="inter_word"
-                    android:text="@{gameDetail.descriptionRaw}"
+                    android:text="@{mealDetail.strMeal}"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/about_meal"
+                    app:layout_constraintTop_toBottomOf="@+id/instructions_meal"
                     tools:text="@string/lorem_ipsum" />
 
-                <TextView
-                    android:id="@+id/developers_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/developers"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/about_meal_description" />
-
-                <TextView
-                    setDevelopers="@{gameDetail.developers}"
-                    android:id="@+id/meal_developers"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="4sp"
-                    android:maxLines="2"
-                    android:textColor="@color/light_blue"
-                    android:textSize="16sp"
-                    android:textStyle="italic|bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/developers_title"
-                    tools:text="@string/example_developers" />
-
-                <TextView
-                    android:id="@+id/publisher_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/publishers"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/meal_developers" />
-
-                <TextView
-                    setPublishers="@{gameDetail.publishers}"
-                    android:id="@+id/meal_publisher"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="4sp"
-                    android:maxLines="2"
-                    android:textColor="@color/light_red"
-                    android:textSize="16sp"
-                    android:textStyle="italic|bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/publisher_title"
-                    tools:text="@string/example_publisher" />
-
-                <TextView
-                    android:id="@+id/screenshot_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/screenshots"
-                    android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/meal_publisher" />
 
                 <Button
-                    android:id="@+id/remove_favorite_btn"
+                    android:id="@+id/add_favorite_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
-                    android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
-                    android:backgroundTint="@color/red_star"
-                    android:text="@string/remove_from_favorite"
+                    android:backgroundTint="@color/light_blue"
+                    android:text="@string/add_to_favorite"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/screenshots_meal" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/screenshots_meal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/screenshot_title"
-                    app:layout_constraintVertical_bias="0.0"
-                    tools:listitem="@layout/screenshot_layout" />
+                    app:layout_constraintTop_toBottomOf="@+id/instructions_meal_description"
+                    app:layout_constraintVertical_bias="1.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 

@@ -1,10 +1,8 @@
-package com.bootcamp.falah_mealdb
+package com.bootcamp.falah_mealdb.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
 import com.bootcamp.falah_mealdb.model.MealsItem
-import com.example.rawgbootcampidn.R
 import com.example.rawgbootcampidn.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
