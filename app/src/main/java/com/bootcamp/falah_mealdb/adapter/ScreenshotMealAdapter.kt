@@ -3,7 +3,6 @@ package com.bootcamp.falah_mealdb.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bootcamp.falah_mealdb.data.Meal
 import com.example.rawgbootcampidn.databinding.ScreenshotLayoutBinding
 
 class ScreenshotMealAdapter(private val listScreenshotMeal : ArrayList<Meal>) : RecyclerView.Adapter<ScreenshotMealAdapter.ScreenshotViewHolder>() {

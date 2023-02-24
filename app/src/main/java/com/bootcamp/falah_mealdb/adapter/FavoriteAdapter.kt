@@ -3,9 +3,7 @@ package com.bootcamp.falah_mealdb.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bootcamp.falah_mealdb.data.Meal
 import com.example.rawgbootcampidn.databinding.FavoriteMealRowLayoutBinding
-import com.example.rawgbootcampidn.databinding.MealRowLayoutBinding
 
 class FavoriteAdapter(private val listFavoriteMeal : ArrayList<Meal>) : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>() {
     inner class FavoriteViewHolder(val binding: FavoriteMealRowLayoutBinding) : RecyclerView.ViewHolder(binding.root)  {
