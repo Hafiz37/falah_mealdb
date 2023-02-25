@@ -3,14 +3,18 @@ package com.bootcamp.falah_mealdb.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bootcamp.falah_mealdb.model.ResponseMeal
+import com.bootcamp.falah_mealdb.model.MealsItems
 import com.example.rawgbootcampidn.databinding.FavoriteMealRowLayoutBinding
 
-class FavoriteAdapter(private val listFavoriteMeal : ArrayList<ResponseMeal>) : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>() {
+class FavoriteAdapter() : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>() {
+
+    private val listFavoriteMeal : List<MealsItems> = listOf()
     inner class FavoriteViewHolder(val binding: FavoriteMealRowLayoutBinding) : RecyclerView.ViewHolder(binding.root)  {
 
-        fun bind(meal: ResponseMeal) {
-            TODO("Not yet implemented")
+        fun bind(mealDetails: MealsItems) {
+            binding.apply {
+            mealDetail = mealDetails
+            }
         }
 
     }
@@ -25,5 +29,6 @@ class FavoriteAdapter(private val listFavoriteMeal : ArrayList<ResponseMeal>) : 
 
     override fun onBindViewHolder(holder: FavoriteViewHolder, position: Int) {
         return holder.bind(listFavoriteMeal[position])
+
     }
 }

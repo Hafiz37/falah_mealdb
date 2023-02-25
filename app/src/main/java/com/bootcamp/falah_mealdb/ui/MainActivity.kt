@@ -1,23 +1,16 @@
 package com.bootcamp.falah_mealdb.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.ProgressBar
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.bootcamp.falah_mealdb.adapter.ListMealsAdapter
-import com.bootcamp.falah_mealdb.data.metwork.config.ApiConfig
 import com.bootcamp.falah_mealdb.data.metwork.handler.NetworkResult
-import com.bootcamp.falah_mealdb.model.MealsItem
-import com.bootcamp.falah_mealdb.model.ResponseMeal
+import com.bootcamp.falah_mealdb.model.MealsItems
 import com.bootcamp.falah_mealdb.viewModel.MainViewModel
 import com.example.rawgbootcampidn.databinding.ActivityMainBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,6 +24,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar!!.hide()
+
+        binding.favoriteIcon.setOnClickListener{
+            val intent = Intent(this@MainActivity, FavoriteActivity::class.java)
+            startActivity(intent)
+        }
 
 
 
@@ -52,7 +51,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 is NetworkResult.Success -> {
                     val mealAdapter = ListMealsAdapter()
-                    mealAdapter.setData(res.data?.meals as List<MealsItem>)
+                    mealAdapter.setData(res.data?.meals as List<MealsItems>)
 
                     binding.rvBestMeal.apply {
                         layoutManager = LinearLayoutManager(this@MainActivity)
@@ -75,7 +74,7 @@ class MainActivity : AppCompatActivity() {
 //                    val responseMeal = response.body()
 //                    val dataMeal = responseMeal?.meals
 //                    val mealAdapter = ListMealsAdapter()
-//                    mealAdapter.setData(dataMeal as List<MealsItem>)
+//                    mealAdapter.setData(dataMeal as List<MealsItems>)
 //
 //                    binding.rvBestMeal.apply {
 //                        layoutManager = LinearLayoutManager(this@MainActivity)

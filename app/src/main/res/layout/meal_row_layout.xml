@@ -8,7 +8,7 @@
 
         <variable
             name="data"
-            type="com.bootcamp.falah_mealdb.model.MealsItem" />
+            type="com.bootcamp.falah_mealdb.model.MealsItems" />
     </data>
 
     <androidx.cardview.widget.CardView

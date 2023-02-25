@@ -1,8 +1,9 @@
 package com.bootcamp.falah_mealdb.viewModel
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bootcamp.falah_mealdb.data.RemoteDataSource
 import com.bootcamp.falah_mealdb.data.Repositori
@@ -11,7 +12,7 @@ import com.bootcamp.falah_mealdb.data.metwork.handler.NetworkResult
 import com.bootcamp.falah_mealdb.model.ResponseMeal
 import kotlinx.coroutines.launch
 
-class MainViewModel():ViewModel() {
+class FavoriteViewModel(application: Application):AndroidViewModel(application) {
 
     private val remoteService = Service.MealService
     private val remote = RemoteDataSource(remoteService)
@@ -31,5 +32,6 @@ class MainViewModel():ViewModel() {
             }
         }
     }
+
 
 }

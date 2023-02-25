@@ -5,16 +5,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bootcamp.falah_mealdb.ui.DetailActivity
-import com.bootcamp.falah_mealdb.model.MealsItem
+import com.bootcamp.falah_mealdb.model.MealsItems
 import com.example.rawgbootcampidn.databinding.MealRowLayoutBinding
 
 class ListMealsAdapter() : RecyclerView.Adapter<ListMealsAdapter.ListViewHolder>() {
 
-    private var listMeal: List<MealsItem> = listOf()
+    private var listMeal: List<MealsItems> = listOf()
     inner class ListViewHolder(val binding: MealRowLayoutBinding) :RecyclerView.ViewHolder(binding.root) {
 
 
-        fun bind(meal: MealsItem) {
+        fun bind(meal: MealsItems) {
             binding.apply {
                 data = meal
                 binding.latestMealItemWrapper.setOnClickListener {
@@ -42,8 +42,8 @@ class ListMealsAdapter() : RecyclerView.Adapter<ListMealsAdapter.ListViewHolder>
         return holder.bind(listMeal[position])
     }
 
-    fun setData(data : List<MealsItem>){
-        listMeal = data as ArrayList<MealsItem>
+    fun setData(data : List<MealsItems>){
+        listMeal = data as ArrayList<MealsItems>
         notifyDataSetChanged()
     }
 

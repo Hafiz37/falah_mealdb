@@ -6,7 +6,7 @@
     <data>
         <variable
             name="Meals"
-            type="com.bootcamp.falah_mealdb.model.MealsItem" />
+            type="com.bootcamp.falah_mealdb.model.MealsItems" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

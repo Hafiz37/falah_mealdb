@@ -8,11 +8,11 @@ import com.google.gson.annotations.SerializedName
 data class ResponseMeal(
 
 	@field:SerializedName("meals")
-	val meals: List<MealsItem?>? = null
+	val meals: List<MealsItems?>? = null
 ) : Parcelable
 
 @Parcelize
-data class MealsItem(
+data class MealsItems(
 
 	@field:SerializedName("strMealThumb")
 	val strMealThumb: String? = null,

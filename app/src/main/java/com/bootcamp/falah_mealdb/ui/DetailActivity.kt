@@ -2,7 +2,7 @@ package com.bootcamp.falah_mealdb.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.bootcamp.falah_mealdb.model.MealsItem
+import com.bootcamp.falah_mealdb.model.MealsItems
 import com.example.rawgbootcampidn.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
@@ -14,7 +14,7 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val meal = intent.getParcelableExtra<MealsItem>(EXTRA_MEAL)!!
+        val meal = intent.getParcelableExtra<MealsItems>(EXTRA_MEAL)!!
 
         supportActionBar?.apply {
             title = "Meals"
