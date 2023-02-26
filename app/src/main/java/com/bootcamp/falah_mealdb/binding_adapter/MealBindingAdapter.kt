@@ -15,17 +15,4 @@ object MealBindingAdapter {
             .into(imageView)
     }
 
-//    @BindingAdapter("setStrArea")
-//    @JvmStatic
-//    fun setStrArea(textView: TextView, areas: List<strArea?>?) {
-//        val textStrArea =
-//            areas?.map { area -> area?.name }?.joinToString(
-//                separator = " ",
-//                limit = 3,
-//                truncated = "..."
-//            )
-//        textView.text = textStrArea
-//    }
-
-
 }

@@ -6,6 +6,7 @@ import com.bootcamp.falah_mealdb.data.LocalDataResource
 import com.bootcamp.falah_mealdb.data.RemoteDataSource
 import com.bootcamp.falah_mealdb.data.Repository
 import com.bootcamp.falah_mealdb.data.database.MealDatabase
+import com.bootcamp.falah_mealdb.data.database.MealEntity
 import com.bootcamp.falah_mealdb.data.network.Service
 import com.bootcamp.falah_mealdb.data.network.handler.NetworkResult
 import com.bootcamp.falah_mealdb.model.MealDetail

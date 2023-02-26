@@ -29,9 +29,7 @@ class FavoriteAdapter() : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolde
 
         fun bind(item: MealEntity) {
             binding.apply {
-                if (item != null) {
-                    mealDetail = item.meal
-                }
+                    mealDetail = item
                 itemView.setOnClickListener {
                     onFavoriteItemCallBack.onFavoriteItemClickCallback(item)
                 }
