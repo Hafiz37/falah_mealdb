@@ -11,6 +11,7 @@ import com.example.rawgbootcampidn.databinding.MealRowLayoutBinding
 class ListMealsAdapter() : RecyclerView.Adapter<ListMealsAdapter.ListViewHolder>() {
 
     private var listMeal: List<MealsItems> = listOf()
+    private lateinit var onItemCallBack: IOnItemCallBack
     inner class ListViewHolder(val binding: MealRowLayoutBinding) :RecyclerView.ViewHolder(binding.root) {
 
 
@@ -45,6 +46,14 @@ class ListMealsAdapter() : RecyclerView.Adapter<ListMealsAdapter.ListViewHolder>
     fun setData(data : List<MealsItems>){
         listMeal = data as ArrayList<MealsItems>
         notifyDataSetChanged()
+    }
+
+    fun setOnClickCallback(action: IOnItemCallBack) {
+        this.onItemCallBack = action
+    }
+
+    interface IOnItemCallBack{
+        fun onItemClickCallback(data : MealsItems)
     }
 
 

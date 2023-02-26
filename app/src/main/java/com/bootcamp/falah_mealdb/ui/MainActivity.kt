@@ -7,7 +7,7 @@ import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bootcamp.falah_mealdb.adapter.ListMealsAdapter
-import com.bootcamp.falah_mealdb.data.metwork.handler.NetworkResult
+import com.bootcamp.falah_mealdb.data.network.handler.NetworkResult
 import com.bootcamp.falah_mealdb.model.MealsItems
 import com.bootcamp.falah_mealdb.viewModel.MainViewModel
 import com.example.rawgbootcampidn.databinding.ActivityMainBinding
@@ -59,6 +59,14 @@ class MainActivity : AppCompatActivity() {
                         adapter = mealAdapter
                     }
 
+                    mealAdapter.setOnClickCallback(object : ListMealsAdapter.IOnItemCallBack {
+                        override fun onItemClickCallback(data: MealsItems) {
+                            val intent = Intent(this@MainActivity, DetailActivity::class.java)
+                            intent.putExtra(DetailActivity.EXTRA_MEAL, data)
+                            startActivity(intent)
+                        }
+                    })
+
                     handleUi(
                         recyclerView = true,
                         progressBar = false,
@@ -67,32 +75,8 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
-//        ApiConfig.gerService().getMeal().enqueue(object : Callback<ResponseMeal>{
-//            override fun onResponse(call: Call<ResponseMeal>, response: Response<ResponseMeal>) {
-//                if (response.isSuccessful){
-//                    val responseMeal = response.body()
-//                    val dataMeal = responseMeal?.meals
-//                    val mealAdapter = ListMealsAdapter()
-//                    mealAdapter.setData(dataMeal as List<MealsItems>)
-//
-//                    binding.rvBestMeal.apply {
-//                        layoutManager = LinearLayoutManager(this@MainActivity)
-//                        setHasFixedSize(true)
-//                        adapter = mealAdapter
-//                    }
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<ResponseMeal>, t: Throwable) {
-//                Log.d("gagal", "onFailure: " + t.localizedMessage)
-//            }
-//
-//        })
-
-
-
     }
+
 
     private fun handleUi(
         recyclerView: Boolean,

@@ -1,11 +1,9 @@
-package com.bootcamp.falah_mealdb.data.metwork.api
+package com.bootcamp.falah_mealdb.data.network.api
 
 import com.bootcamp.falah_mealdb.model.MealDetail
 import com.bootcamp.falah_mealdb.model.ResponseMeal
-import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface MealApi {

@@ -1,6 +1,6 @@
-package com.bootcamp.falah_mealdb.data.metwork
+package com.bootcamp.falah_mealdb.data.network
 
-import com.bootcamp.falah_mealdb.data.metwork.api.MealApi
+import com.bootcamp.falah_mealdb.data.network.api.MealApi
 import com.bootcamp.falah_mealdb.utils.Constant.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -19,7 +19,7 @@ object Service {
         Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create()).build()
     }
 
-    val MealService: MealApi by lazy {
+    val mealService: MealApi by lazy {
         retrofit.create(MealApi::class.java)
     }
 

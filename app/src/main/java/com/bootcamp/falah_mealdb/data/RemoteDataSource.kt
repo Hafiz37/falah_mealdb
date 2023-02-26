@@ -1,8 +1,8 @@
 package com.bootcamp.falah_mealdb.data
 
 import android.util.Log
-import com.bootcamp.falah_mealdb.data.metwork.api.MealApi
-import com.bootcamp.falah_mealdb.data.metwork.handler.NetworkResult
+import com.bootcamp.falah_mealdb.data.network.api.MealApi
+import com.bootcamp.falah_mealdb.data.network.handler.NetworkResult
 import com.bootcamp.falah_mealdb.model.MealDetail
 import com.bootcamp.falah_mealdb.model.ResponseMeal
 import kotlinx.coroutines.Dispatchers

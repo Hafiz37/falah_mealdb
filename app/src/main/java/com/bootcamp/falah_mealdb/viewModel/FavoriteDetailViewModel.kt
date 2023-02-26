@@ -9,20 +9,18 @@ import com.bootcamp.falah_mealdb.data.database.MealEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class FavoriteViewModel(application: Application):AndroidViewModel(application) {
+class FavoriteDetailViewModel(application: Application) : AndroidViewModel(application) {
 
-    // LOCAL
+    // DAO
     private val mealDao = MealDatabase.getDatabase(application).mealDao()
     private val local = LocalDataResource(mealDao)
 
+    // Repository
     private val repository = Repository(local = local)
 
-    val favoriteMealList: LiveData<List<MealEntity>> = repository.local!!.listMeal().asLiveData()
-
-    fun deleteAllMeals() {
+    fun deleteFavoriteMeal(mealEntity: MealEntity) {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.local!!.deleteAllMeals()
+            repository.local!!.deleteMeal(mealEntity)
         }
     }
-
 }

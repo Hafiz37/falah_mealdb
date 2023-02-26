@@ -7,7 +7,7 @@
 
         <variable
             name="mealDetail"
-            type="com.bootcamp.falah_mealdb.model.MealsItems" />
+            type="com.bootcamp.falah_mealdb.model.MealsItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,6 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:scaleType="fitXY"
+                    loadImageFromUrl="@{mealDetail.strMealThumb}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -89,6 +90,7 @@
                     android:textColor="@color/green_android"
                     android:textSize="16sp"
                     android:textStyle="italic|bold"
+                    android:text="@{mealDetail.strArea}"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/id_meal"
                     tools:text="@string/example_area" />
@@ -116,9 +118,9 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginTop="8dp"
                     android:justificationMode="inter_word"
-                    android:text="@{mealDetail.strMeal}"
                     android:textColor="@color/white"
                     android:textSize="14sp"
+                    android:text="@{mealDetail.strInstructions}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
