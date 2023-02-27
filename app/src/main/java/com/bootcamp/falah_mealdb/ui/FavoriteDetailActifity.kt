@@ -33,7 +33,7 @@ class FavoriteDetailActifity : AppCompatActivity() {
         }
 
         val favoriteMeal = intent.getParcelableExtra<MealEntity>(EXTRA_FAVORITE_MEAL)
-        binding.mealDetail = favoriteMeal!!.meal
+        binding.mealDetail = favoriteMeal?.meal?.meals!![0]
 
         binding.apply {
             addFavoriteBtn.apply {

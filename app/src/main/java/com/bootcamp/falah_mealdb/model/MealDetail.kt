@@ -5,10 +5,10 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 @Parcelize
-data class MealDetail(
+data class  MealDetail(
 
 	@field:SerializedName("meals")
-	val meals: List<MealsItems?>? = null
+	val meals: List<MealsItem?>? = null
 ) : Parcelable
 
 @Parcelize

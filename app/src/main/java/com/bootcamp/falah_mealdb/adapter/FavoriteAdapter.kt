@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bootcamp.falah_mealdb.data.database.MealEntity
 import com.bootcamp.falah_mealdb.model.MealsItems
+import com.bumptech.glide.Glide
+import com.example.rawgbootcampidn.R
 import com.example.rawgbootcampidn.databinding.FavoriteMealRowLayoutBinding
 
 class FavoriteAdapter() : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>() {
@@ -30,7 +32,15 @@ class FavoriteAdapter() : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolde
         fun bind(item: MealEntity) {
             binding.apply {
                     mealDetail = item
-                itemView.setOnClickListener {
+
+                    Glide.with(itemImg)
+                        .load(item.meal.meals!![0]?.strMealThumb)
+                        .error(R.drawable.ic_launcher_background)
+                        .into(itemImg)
+                    itemName.text = item.meal.meals!![0]?.strMeal
+                    itemId.text = item.meal.meals!![0]?.idMeal
+
+                    itemView.setOnClickListener {
                     onFavoriteItemCallBack.onFavoriteItemClickCallback(item)
                 }
             }

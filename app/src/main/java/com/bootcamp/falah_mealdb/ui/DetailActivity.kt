@@ -11,7 +11,7 @@ import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import com.bootcamp.falah_mealdb.data.database.MealEntity
 import com.bootcamp.falah_mealdb.data.network.handler.NetworkResult
-import com.bootcamp.falah_mealdb.model.MealsItem
+import com.bootcamp.falah_mealdb.model.MealDetail
 import com.bootcamp.falah_mealdb.model.MealsItems
 import com.bootcamp.falah_mealdb.viewModel.DetailViewModel
 import com.example.rawgbootcampidn.databinding.ActivityDetailBinding
@@ -19,7 +19,7 @@ import com.example.rawgbootcampidn.databinding.ActivityDetailBinding
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
-    private lateinit var mealDetail: MealsItem
+    private lateinit var mealDetail: MealDetail
     private val detailViewModel by viewModels<DetailViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,13 +46,22 @@ class DetailActivity : AppCompatActivity() {
                     handleUi(wrapper = false, progress = false, errorTv = true)
                 }
                 is NetworkResult.Success -> {
-                    val data = res.data?.meals?.get(0)
-                    mealDetail = res.data?.meals?.get(0)!!
-                    binding.apply {
-                        mealDetail = data
-                    }
+                    val selectedMeal = res.data?.meals!![0]
+                    binding.meals = selectedMeal
+                    mealDetail = res.data!!
                     handleUi(wrapper = true, progress = false, errorTv = false)
                 }
+
+//                is NetworkResult.Success -> {
+//                    val data = res.data?.meals?.get(0)
+//                    mealDetail = res.data?.meals?.get(0)!!
+//                    binding.apply {
+//                        mealDetail = data
+//                    }
+//                    handleUi(wrapper = true, progress = false, errorTv = false)
+//                }
+
+                else -> {}
             }
         }
 
@@ -74,7 +83,7 @@ class DetailActivity : AppCompatActivity() {
     private fun isFavoriteMeal(mealSelected: MealsItems) {
         detailViewModel.favoriteMealList.observe(this) { result ->
             val meal = result.find { favorite ->
-                favorite.meal.idMeal == mealSelected.idMeal
+                favorite.meal.meals!![0]?.idMeal == mealSelected.idMeal
             }
             if (meal != null) {
                 binding.addFavoriteBtn.apply {
