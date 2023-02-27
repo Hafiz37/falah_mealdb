@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
 import com.bootcamp.falah_mealdb.data.database.MealEntity
+import com.bootcamp.falah_mealdb.data.network.handler.NetworkResult
 import com.bootcamp.falah_mealdb.model.MealsItem
 import com.bootcamp.falah_mealdb.model.MealsItems
 import com.bootcamp.falah_mealdb.viewModel.DetailViewModel
@@ -36,6 +37,24 @@ class DetailActivity : AppCompatActivity() {
 
         detailViewModel.fetchMealDetail(meal?.idMeal as String)
 
+        detailViewModel.mealDetail.observe(this) { res ->
+            when (res) {
+                is NetworkResult.Loading -> {
+                    handleUi(wrapper = false, progress = true, errorTv = false)
+                }
+                is NetworkResult.Error -> {
+                    handleUi(wrapper = false, progress = false, errorTv = true)
+                }
+                is NetworkResult.Success -> {
+                    val data = res.data?.meals?.get(0)
+                    mealDetail = res.data?.meals?.get(0)!!
+                    binding.apply {
+                        mealDetail = data
+                    }
+                    handleUi(wrapper = true, progress = false, errorTv = false)
+                }
+            }
+        }
 
         isFavoriteMeal(meal)
     }

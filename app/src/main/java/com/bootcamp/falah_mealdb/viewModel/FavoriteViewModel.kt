@@ -19,10 +19,6 @@ class FavoriteViewModel(application: Application):AndroidViewModel(application) 
 
     val favoriteMealList: LiveData<List<MealEntity>> = repository.local!!.listMeal().asLiveData()
 
-    fun deleteAllMeals() {
-        viewModelScope.launch(Dispatchers.IO) {
-            repository.local!!.deleteAllMeals()
-        }
-    }
+
 
 }
